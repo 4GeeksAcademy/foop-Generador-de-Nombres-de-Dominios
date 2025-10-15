@@ -1,0 +1,43 @@
+body {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('https://cdn.pixabay.com/photo/2020/05/31/16/53/domain-5243252_1280.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+    
+}
+.title-container {
+    display: inline-block; /* Hace que el contenedor se ajuste al tamaño del texto */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borde blanco sutil */
+    padding: 20px 30px; /* Espacio interior para que el texto no toque los bordes */
+    border-radius: 15px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra para dar profundidad */
+
+.container {
+    max-width: 800px;
+}
+}
+
+.output-area {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    height: 400px;
+    overflow-y: auto;
+    display: none; /* Oculto por defecto */
+}
+
+/* Estilo para el modal con fondo de calavera */
+#hackModal .modal-content {
+    background-color: #1a1a1a;
+    color: #ffc107;
+    /* Usamos un SVG en línea para el icono de fondo */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><text y="50%" dominant-baseline="central" text-anchor="middle" font-size="80">💀</text></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+}

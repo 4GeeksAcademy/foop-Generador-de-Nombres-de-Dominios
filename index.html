@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Nombres de Dominio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="modal fade" id="hackModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-skull-crossbones"></i> Advertencia</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Estás a punto de generar "domain hacks". Esta acción está bajo tu responsabilidad.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="confirmCheckbox">
+                        <label class="form-check-label" for="confirmCheckbox">
+                            Entiendo los riesgos y quiero continuar.
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-warning" id="acceptHackButton" disabled>Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center py-5">
+        <div class="title-container">
+            <h1 class="mb-3" >Generador de Nombres de Dominio 🌐</h1>
+        </div>
+        <div>
+        <p class="lead mb-5">Crea combinaciones de dominios estándar o prueba con los ingeniosos "Domain Hacks".</p>
+        </div>  
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-4">
+                <button class="btn btn-primary btn-lg" id="generateStandard">Generar Dominios Estándar</button>
+                <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#hackModal">
+                Generar Domain Hacks
+                </button>
+            </div>
+
+            <div id="standard-output" class="output-area">
+                <h3>Dominios Estándar</h3>
+                <ul id="standard-list" class="list-unstyled"></ul>
+            </div>
+        
+        <div id="hack-output" class="output-area mt-4">
+             <h3>Domain Hacks</h3>
+             <ul id="hack-list" class="list-unstyled"></ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

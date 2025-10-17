@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     // --- Palabras para generar los dominios ---
     const pronouns = ['the', 'our', 'a', 'my'];
-    const adjs = ['great', 'big', 'awesome', 'cool'];
+    const adjetives = ['great', 'big', 'awesome', 'cool'];
     const nouns = ['jogger', 'racoon', 'puedes', 'coder', 'crusade'];
     const extensions = ['.com', '.net', '.us', '.io', '.es', '.er', '.de'];
 
     // --- Elementos del DOM ---
     // Botones
-    const standardBtn = document.getElementById('generateStandard');
-    const hackBtn = document.getElementById('acceptHackButton');
+    const standardBtn = document.getElementById('generate-standard');
+    const hackBtn = document.getElementById('accept-hack-button');
     
     // Áreas de resultado y listas
     const standardOutput = document.getElementById('standard-output');
@@ -17,13 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const hackList = document.getElementById('hack-list');
 
     // Elementos del Modal
-    const confirmCheckbox = document.getElementById('confirmCheckbox');
-    const hackModalEl = document.getElementById('hackModal');
-
-
+    const confirmCheckbox = document.getElementById('confirm-checkbox');
+    const hackModalEl = document.getElementById('hack-modal');
 
     // Boton checkbox "Aceptar" 
-
     confirmCheckbox.addEventListener('change', function() {
         hackBtn.disabled = !this.checked;
     });
@@ -41,10 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // generardor Dominios Estándar
         for (const pronoun of pronouns) {
-            for (const adj of adjs) {
+            for (const adjetive of adjetives) {
                 for (const noun of nouns) {
-                    for (const ext of extensions) {
-                        const domain = pronoun + adj + noun + ext;
+                    for (const extension of extensions) {
+                        const domain = pronoun + adjetive + noun + extension;
                         const li = document.createElement('li');
                         li.textContent = domain;
                         standardList.appendChild(li);
@@ -67,13 +64,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Bucle para generar y mostrar los "domain hacks"
         for (const pronoun of pronouns) {
-            for (const adj of adjs) {
+            for (const adjetive of adjetives) {
                 for (const noun of nouns) {
-                    for (const ext of extensions) {
-                        const cleanExt = ext.substring(1);
+                    for (const extension of extensions) {
+                        const cleanExt = extension.substring(1);
                         if (noun.endsWith(cleanExt)) {
                             const nounBase = noun.slice(0, noun.length - cleanExt.length);
-                            const domainHack = pronoun + adj + nounBase + ext;
+                            const domainHack = pronoun + adjetive + nounBase + extension;
                             const li = document.createElement('li');
                             li.textContent = domainHack;
                             hackList.appendChild(li);
